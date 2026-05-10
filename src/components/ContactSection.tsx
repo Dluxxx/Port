@@ -17,6 +17,12 @@ const SOCIAL = [
   },
 ];
 
+const GAME_INVITES = [
+  { game: 'Mobile Legends', id: 'Davian · Mythic Immortal ⭐100', color: '#e8c44a', icon: '⚔️' },
+  { game: 'FC Mobile', id: 'Davian · OVR 119', color: '#00d46a', icon: '⚽' },
+  { game: 'Free Fire', id: 'Davian · Master', color: '#ff6b35', icon: '🔥' },
+];
+
 export function ContactSection() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
@@ -35,20 +41,40 @@ export function ContactSection() {
           </div>
 
           <h2 className="font-display font-bold text-5xl md:text-7xl tracking-tight leading-tight mb-5">
-            <GradientText colors={['#ffffff', '#888888', '#444444']} animationSpeed={10}>Let's work</GradientText>
+            <GradientText colors={['#ffffff', '#888888', '#444444']} animationSpeed={10}>Let's play</GradientText>
             <br />
             <span style={{ color: '#1e1e1e' }}>together.</span>
           </h2>
 
-          <p className="text-lg mb-12" style={{ color: '#555' }}>
-            Saya terbuka untuk kolaborasi, belajar bareng, dan proyek seru!<br />
-            Hubungi saya lewat social media saya di bawah ini.
+          <p className="text-lg mb-8" style={{ color: '#555' }}>
+            Mau duo, squad, atau sekedar ngobrol soal game?<br />
+            Invite aja atau hubungi via social media di bawah!
           </p>
+
+          {/* Game Invite Cards */}
+          <div className="flex flex-wrap gap-3 justify-center mb-10">
+            {GAME_INVITES.map((g, i) => (
+              <motion.div
+                key={g.game}
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: i * 0.1 + 0.2 }}
+                className="flex items-center gap-3 px-5 py-3 rounded-xl glass-card"
+                style={{ border: `1px solid ${g.color}25` }}
+              >
+                <span className="text-xl">{g.icon}</span>
+                <div className="text-left">
+                  <p className="text-xs font-mono" style={{ color: '#555' }}>{g.game}</p>
+                  <p className="text-sm font-display font-semibold" style={{ color: g.color }}>{g.id}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
 
           <div className="flex flex-wrap gap-5 justify-center mb-12">
             {SOCIAL.map((s, i) => (
               <motion.a key={s.name} href={s.href} target="_blank" rel="noreferrer"
-                initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: i * 0.1 + 0.3 }}
+                initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: i * 0.1 + 0.4 }}
                 className="flex flex-col items-center gap-3 p-7 rounded-2xl glass-card glass-card-hover"
                 style={{ minWidth: 130 }} whileHover={{ y: -4 }} data-cursor="hover">
                 <motion.div style={{ color: '#555' }} whileHover={{ color: s.color, scale: 1.1 }} transition={{ duration: 0.18 }}>
@@ -83,16 +109,16 @@ export function Footer() {
         <div className="flex items-center gap-2">
           <div className="w-6 h-6 rounded-md flex items-center justify-center text-xs font-mono font-bold"
             style={{ background: 'rgba(177,158,239,0.1)', color: '#B19EEF', border: '1px solid rgba(177,158,239,0.2)' }}>
-            {'<>'}
+            🎮
           </div>
           <span className="text-sm font-display font-semibold gradient-text">Davian</span>
         </div>
         <p className="text-xs font-mono" style={{ color: '#333' }}>
-          © {new Date().getFullYear()} Davian · Built with React, TypeScript, GSAP & ❤ · All rights reserved
+          © {new Date().getFullYear()} Davian · Mythic Immortal · OVR 119 · Level 70 · Master · ELO 910 · All rights reserved
         </p>
         <div className="flex items-center gap-1.5">
           <div className="w-1.5 h-1.5 rounded-full" style={{ background: '#B19EEF', animation: 'pulse 2s infinite' }} />
-          <span className="text-xs font-mono" style={{ color: '#444' }}>Available for hire</span>
+          <span className="text-xs font-mono" style={{ color: '#444' }}>Ready to Play</span>
         </div>
       </div>
     </footer>

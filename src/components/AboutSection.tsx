@@ -8,16 +8,16 @@ import GradientText from './GradientText';
 gsap.registerPlugin(ScrollTrigger);
 
 const INFO = [
-  { label: 'Nama',       value: 'Davian "Vald"', icon: '✨' },
-  { label: 'Umur',       value: '15 Tahun',    icon: '🎂' },
-  { label: 'Gender',     value: 'Male',        icon: '👤' },
-  { label: 'Pendidikan', value: 'Pelajar',     icon: '🎓' },
-  { label: 'Status',     value: 'Pelajar',     icon: '📚' },
-  { label: 'Location',   value: 'Indonesia',   icon: '🌏' },
+  { label: 'Nama',       value: 'Davian',       icon: '✨' },
+  { label: 'Umur',       value: '15 Tahun',     icon: '🎂' },
+  { label: 'Gender',     value: 'Male',         icon: '👤' },
+  { label: 'Pendidikan', value: 'Pelajar',      icon: '🎓' },
+  { label: 'Status',     value: 'Active Gamer', icon: '🎮' },
+  { label: 'Location',   value: 'Indonesia',    icon: '🌏' },
 ];
 
 const USE_VIDEO = false;
-const MEDIA_SRC = USE_VIDEO ? '/video.mp4' : '/Adit.jpg';
+const MEDIA_SRC = USE_VIDEO ? '/video.mp4' : '/Davian.jpg';
 
 export default function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -97,7 +97,7 @@ export default function AboutSection() {
             <TiltCard
               src={MEDIA_SRC}
               isVideo={USE_VIDEO}
-              alt="Adit Kusuma"
+              alt="Davian"
               style={{ width: '100%', height: '100%' }}
             >
               <div
@@ -118,20 +118,20 @@ export default function AboutSection() {
                       boxShadow: '0 0 36px rgba(82,39,255,0.22)',
                     }}
                   >
-                    👤
+                    🎮
                   </div>
                   <div>
-                    <p className="font-display font-bold text-white text-lg">Davian "Vald"</p>
-                    <p className="font-mono text-xs mt-1" style={{ color: '#B19EEF' }}>Student</p>
+                    <p className="font-display font-bold text-white text-lg">Davian</p>
+                    <p className="font-mono text-xs mt-1" style={{ color: '#B19EEF' }}>Gamer · Student</p>
                   </div>
                   <div className="flex gap-1.5">
                     {[1,2,3,4,5].map(i => (
                       <div key={i} className="w-1.5 h-1.5 rounded-full"
-                        style={{ background: i <= 4 ? '#B19EEF' : 'rgba(177,158,239,0.18)' }} />
+                        style={{ background: i <= 5 ? '#B19EEF' : 'rgba(177,158,239,0.18)' }} />
                     ))}
                   </div>
                   <p className="text-xs font-mono" style={{ color: '#2a2a2a' }}>
-                    {USE_VIDEO ? 'public/video.mp4' : 'public/Adit.jpg'}
+                    {USE_VIDEO ? 'public/video.mp4' : 'public/Davian.jpg'}
                   </p>
                 </div>
               </div>
@@ -152,10 +152,10 @@ export default function AboutSection() {
                 <GradientText colors={['#B19EEF', '#5227FF', '#FF9FFC']} animationSpeed={5}>
                   Davian
                 </GradientText>
-                , Seorang pelajar berusia 15 tahun yang tertarik pada dunia IT, matematika, dan basket. Yang suka mempelajari hal baru dan ingin terus berkembang.
+                , Seorang pelajar berusia 15 tahun yang passionate di dunia gaming, mulai dari Mobile Legends sampai Chess. Selalu grind untuk reach rank tertinggi di setiap game.
               </p>
               <p className="text-base leading-relaxed" style={{ color: '#555' }}>
-                Aktif mengembangkan kemampuan JavaScript, logika berpikir, serta problem solving untuk menciptakan pengalaman dan skill yang lebih baik setiap hari. 
+                Aktif bermain berbagai genre game kompetitif, terus mengasah skill, strategi, dan mental untuk bisa bersaing di level tertinggi setiap harinya.
               </p>
             </div>
 
@@ -181,7 +181,7 @@ export default function AboutSection() {
               style={{ background: 'rgba(177,158,239,0.03)', border: '1px solid rgba(177,158,239,0.09)' }}
             >
               <p className="text-sm leading-relaxed italic" style={{ color: '#555' }}>
-                "Belajar berjalan tanpa bergantung."
+                "Kalah itu belajar, menang itu bukti."
               </p>
               <div className="mt-3 flex items-center gap-2">
                 <div className="w-5 h-px" style={{ background: 'rgba(177,158,239,0.35)' }} />

@@ -5,8 +5,8 @@ import gsap from 'gsap';
 const NAV_ITEMS = [
   { label: 'Home',     href: '#home' },
   { label: 'About',    href: '#about' },
-  { label: 'Skills',   href: '#skills' },
-  { label: 'Projects', href: '#projects' },
+  { label: 'Games',   href: '#skills' },
+  { label: 'Games I Play', href: '#projects' },
   { label: 'Contact',  href: '#contact' },
 ];
 
@@ -150,7 +150,7 @@ export default function Navbar() {
           whileTap={{ scale: 0.97 }}
           data-cursor="hover"
         >
-          Hire Me <span>↗</span>
+          Play With Me <span>↗</span>
         </motion.a>
 
         {/* ── Mobile hamburger ── */}

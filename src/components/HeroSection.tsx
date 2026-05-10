@@ -5,7 +5,7 @@ import PixelBlast from './PixelBlast';
 import GradientText from './GradientText';
 import ScrollVelocity from './ScrollVelocity';
 
-const MARQUEE = ['JavaScript', 'TypeScript', 'React', 'HTML5', 'TailwindCSS', 'Python', 'Node.js', 'Three.js', 'GSAP', 'Figma'];
+const MARQUEE = ['Mobile Legends', 'Honkai Star-Rail', 'Free Fire', 'FC Mobile', 'Chess', 'Mythic Immortal', 'Level 70', 'Master'];
 
 export default function HeroSection() {
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -37,7 +37,7 @@ export default function HeroSection() {
           <div className="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono"
             style={{ background: 'rgba(177,158,239,0.08)', border: '1px solid rgba(177,158,239,0.2)', color: '#B19EEF' }}>
             <span className="w-2 h-2 rounded-full" style={{ background: '#B19EEF', boxShadow: '0 0 6px #B19EEF', animation: 'pulse 2s infinite', display: 'inline-block' }} />
-            Open to Learn & Collaborate
+            Ready to Play & Dominate
           </div>
         </div>
 
@@ -56,13 +56,13 @@ export default function HeroSection() {
         </h1>
 
         <p className="font-mono text-sm tracking-widest uppercase mb-6" style={{ color: '#444' }}>
-          Student · Gamer · 15 y.o.
+          Gamer · Student · 15 y.o.
         </p>
 
         <p ref={subRef} className="opacity-0 text-lg md:text-xl max-w-xl mx-auto mb-10 leading-relaxed" style={{ color: '#666' }}>
-          Pelajar 15 tahun yang membangun{' '}
-          <GradientText colors={['#B19EEF', '#5227FF', '#FF9FFC']} animationSpeed={4}>pengalaman web yang keren</GradientText>.
-          {' '}Belajar setiap hari, satu commit satu langkah maju.
+          Pelajar 15 tahun yang menghabiskan waktu untuk{' '}
+          <GradientText colors={['#B19EEF', '#5227FF', '#FF9FFC']} animationSpeed={4}>menguasai game demi game</GradientText>.
+          {' '}Grind setiap hari, satu rank satu langkah maju.
         </p>
 
         <div ref={ctaRef} className="opacity-0 flex flex-wrap gap-4 justify-center">
@@ -70,7 +70,7 @@ export default function HeroSection() {
             className="px-8 py-4 rounded-full font-semibold text-sm font-display text-white"
             style={{ background: 'linear-gradient(135deg, #5227FF, #B19EEF)', boxShadow: '0 0 30px rgba(82,39,255,0.3)' }}
             whileHover={{ scale: 1.04, boxShadow: '0 0 50px rgba(82,39,255,0.5)' }} whileTap={{ scale: 0.97 }} data-cursor="hover">
-            View Projects ↗
+            View Games ↗
           </motion.button>
           <motion.button onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
             className="px-8 py-4 rounded-full font-semibold text-sm font-display"

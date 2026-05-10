@@ -8,20 +8,24 @@ import ScrollVelocity from './ScrollVelocity';
 gsap.registerPlugin(ScrollTrigger);
 
 const SKILLS = [
-  { name: 'JavaScript', level: 100, color: '#f7df1e' },
+  { name: 'Mobile Legends', level: 100, color: '#e8c84a', rank: 'Mythic Immortal ⭐100' },
+  { name: 'FC Mobile', level: 92, color: '#00d46a', rank: 'OVR 119' },
+  { name: 'Honkai Star-Rail', level: 75, color: '#c0a6f7', rank: 'Level 70' },
+  { name: 'Free Fire', level: 68, color: '#ff6b35', rank: 'Master' },
+  { name: 'Chess', level: 45, color: '#a0a0a0', rank: 'ELO 910' },
 ];
 
-const TOOLS = [
-  'VS Code',
-  'Git',
-  'GitHub',
-  'Node.js',
-  'npm',
-  'React',
-  'Vite',
-  'Postman',
-  'Vercel',
-  'ESLint',
+const GAMES = [
+  'Mobile Legends',
+  'Honkai Star-Rail',
+  'Free Fire',
+  'FC Mobile',
+  'Chess',
+  'Mythic Immortal',
+  'Level 70',
+  'OVR 119',
+  'Master Rank',
+  'ELO 910',
 ];
 
 export default function SkillsSection() {
@@ -81,7 +85,7 @@ export default function SkillsSection() {
               className="text-xs font-mono tracking-widest uppercase"
               style={{ color: '#B19EEF' }}
             >
-              Skills
+              Games
             </span>
           </div>
 
@@ -90,11 +94,11 @@ export default function SkillsSection() {
               colors={['#ffffff', '#888888', '#444444']}
               animationSpeed={12}
             >
-              Tech
+              Game
             </GradientText>
 
             <span className="ml-3" style={{ color: '#1e1e1e' }}>
-              Stack.
+              Stats.
             </span>
           </h2>
         </motion.div>
@@ -106,7 +110,7 @@ export default function SkillsSection() {
               className="font-display font-medium text-base mb-8"
               style={{ color: '#666' }}
             >
-              Proficiency Level
+              Highest Rank Achieved
             </p>
 
             <div className="space-y-5">
@@ -127,9 +131,9 @@ export default function SkillsSection() {
 
                     <span
                       className="text-xs font-mono"
-                      style={{ color: '#444' }}
+                      style={{ color: s.color }}
                     >
-                      {s.level}%
+                      {s.rank}
                     </span>
                   </div>
 
@@ -154,19 +158,19 @@ export default function SkillsSection() {
             </div>
           </div>
 
-          {/* Tools */}
+          {/* Games Tags */}
           <div>
             <p
               className="font-display font-medium text-base mb-8"
               style={{ color: '#666' }}
             >
-              Tools & Technologies
+              Games & Achievements
             </p>
 
             <div className="flex flex-wrap gap-2 mb-10">
-              {TOOLS.map((tool, i) => (
+              {GAMES.map((game, i) => (
                 <motion.span
-                  key={tool}
+                  key={game}
                   initial={{ opacity: 0, scale: 0.85 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{
@@ -176,7 +180,7 @@ export default function SkillsSection() {
                   }}
                   className="skill-tag"
                 >
-                  {tool}
+                  {game}
                 </motion.span>
               ))}
             </div>
@@ -184,9 +188,9 @@ export default function SkillsSection() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-3">
               {[
-                { n: '10+', label: 'Projects' },
-                { n: '1+', label: 'Tahun Coding' },
-                { n: '100%', label: 'JavaScript' },
+                { n: '5', label: 'Games' },
+                { n: 'Mythic', label: 'ML Rank' },
+                { n: '119', label: 'FC OVR' },
               ].map((s) => (
                 <div
                   key={s.label}
@@ -219,8 +223,8 @@ export default function SkillsSection() {
       >
         <ScrollVelocity
           texts={[
-            'JavaScript · JavaScript · JavaScript · JavaScript',
-            'ES6 · DOM · API · Node.js · React · Async/Await',
+            'Mobile Legends · Mythic Immortal ⭐100 · FC Mobile · OVR 119 · Honkai Star-Rail · Level 70',
+            'Free Fire · Master · Chess · ELO 910 · Grind Never Stops',
           ]}
           velocity={45}
           className="text-xs font-mono"
